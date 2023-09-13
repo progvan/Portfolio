@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #fff;
+    color: #222;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.wrapper{
+    width: 1280px;
+    margin: 50px auto;
+}
+
+header{
+    position: relative;
+}
+
+header .logo{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+header ul.nav{
+    float: right;
+    list-style: none;
+}
+
+header ul.nav li{
+    display: inline;
+    margin-left: 25px;
+    cursor: pointer;
+    transition: opacity 500ms ease;
+}
+
+header ul.nav li:hover{
+    opacity: 0.5;
+}
+
+.shop_cart_button{
+    float: right;
+    cursor: pointer;
+    transition: color, transform 500ms ease;
+}
+
+header .shop_cart_button:hover,
+header .shop_cart_button.active{
+    color: #dc3d3d;
+    transform: scale(1.3) rotate(15deg);
+}
+
+header .shop_cart{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 450px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    -webkit-box-shadow: 7px 6px 33px -9px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 7px 6px 33px -9px rgba(66, 68, 90, 1);
+    box-shadow: 7px 6px 33px -9px rgba(66, 68, 90, 1);
+    z-index: 1;
+
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+header .shop_cart .empty{
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+header .shop_cart .item{
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+    padding: 5px;
+    border: 3px double gray;
+    border-radius: 5px;
+}
+
+header .shop_cart .item img{
+    width: 70px;
+    float: left;
+    margin-right: 20px;
+    
+}
+
+header .shop_cart .item h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+header .shop_cart .item p{
+    color: #797979;
+    font-weight: 600;
+}
+
+header .shop_cart .item .delete_icon{
+    color: #ca5252;
+    float: right;
+    position: relative;
+    top: -25px;
+    cursor: pointer;
+    transition: color, transform 500ms ease;
+}
+
+header .shop_cart .item .delete_icon:hover{
+    color: #dc1a1a;
+    transform: scale(1.25);
+}
+
+header .shop_cart .sum{
+    float: left;
+    width: 100px;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+header .presentation{
+    margin: 50px 0;
+    background: url('./images/palazzo-delle-stelline-hotel-camere-1900x1200.webp') no-repeat;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: multiply;
+    background-color: #bcbcbc;
+    position: relative;
+}
+
+header .presentation::after{
+    content: 'Найкращі товари для вашого дому';
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    width: 300px;
+    font-size: 40px;
+    font-weight: 600;
+    color: #fff;
+}
+
+header .presentation::before{
+    content: 'За низькими цінами';
+    position: absolute;
+    top: 250px;
+    left: 50px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.categories div{
+    display: inline-block;
+    background: #f2f2f2;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+    margin-right: 15px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 500ms ease;
+}
+
+.categories div:hover{
+    border-color: silver;
+    transform: scale(1.1)
+}
+
+.full_item{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    overflow: auto;
+}
+
+.full_item > div{
+    width: 600px;
+    position: relative;
+    margin: 10% auto;
+    padding: 40px 30px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+main{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main .item{
+    width: 30%;
+    margin-bottom: 50px;
+    background: #f5f5f5;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+main .item img,
+.full_item img{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    transition: transform 500ms ease;
+    cursor: pointer;
+}
+
+main .item img:hover,
+.full_item img:hover{
+    transform: scale(1.05);
+}
+
+main h2, .full_item h2,
+main p, .full_item p,
+main b, .full_item b{
+    margin: 10px 20px;
+    color: #333;
+}
+
+main h2::selection{
+    background: black;
+    color: white;
+}
+
+main b, .full_item b{
+    color: #5fa36a
+}
+
+main .add_to_cart,
+.full_item .add_to_cart{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    background: #ca5252;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;    
+    font-weight: 600;
+    transition: transform 300ms ease;
+}
+
+main .add_to_cart:hover,
+.full_item .add_to_cart:hover{
+    transform: scale(1.2) translateY(-5px);
+}
+
+footer{
+    text-align: center;
+    margin-top: 100px;
+}
